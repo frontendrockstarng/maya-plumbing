@@ -1,0 +1,300 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-grey);
+  padding: 20px 0;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+.navbar-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-maya {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-blue);
+  letter-spacing: 1px;
+}
+
+.logo-plumbing {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-black);
+  letter-spacing: 2px;
+}
+
+/* Desktop Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: var(--color-blue);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-blue);
+  transition: width 0.3s;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar-cta:hover {
+  background: var(--color-other-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 114, 234, 0.3);
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--color-black);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background: var(--color-black);
+  transition: all 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.hamburger.open {
+  background: transparent;
+}
+
+.hamburger.open::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger.open::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+.navbar-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-grey);
+  padding: 24px 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.navbar-mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  max-height: 500px;
+}
+
+.navbar-mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.navbar-mobile-menu ul li {
+  margin: 0;
+}
+
+.navbar-mobile-menu ul li a {
+  display: block;
+  padding: 16px 80px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar-mobile-menu ul li a:hover {
+  background: var(--color-pale-blue);
+  color: var(--color-blue);
+}
+
+.mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 80px;
+  transition: all 0.3s;
+}
+
+.mobile-cta:hover {
+  background: var(--color-other-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-menu {
+    gap: 24px;
+  }
+
+  .navbar-link {
+    font-size: 15px;
+  }
+
+  .navbar-cta {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-menu,
+  .navbar-cta {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-mobile-menu {
+    display: block;
+  }
+
+  .navbar-mobile-menu ul li a {
+    padding: 16px 40px;
+  }
+
+  .mobile-cta {
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px 0;
+  }
+
+  .logo-maya {
+    font-size: 14px;
+  }
+
+  .logo-plumbing {
+    font-size: 10px;
+  }
+
+  .navbar-mobile-menu ul li a {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .mobile-cta {
+    margin: 0 20px;
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .navbar-logo svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
