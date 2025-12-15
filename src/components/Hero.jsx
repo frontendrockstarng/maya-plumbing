@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Hero.css';
-import heroImage from '../assets/img/heroImg2.png';
+import heroImage from '../assets/img/heroImg2-min.png';
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false);
