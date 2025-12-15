@@ -133,7 +133,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="testimonials-section" ref={sectionRef}>
+    <section className="testimonials-section" ref={sectionRef} id="testimonials">
       <div className="testimonials-badge scroll-reveal" style={{ opacity: sectionVisible ? 1 : 0, transform: sectionVisible ? 'translateY(0)' : 'translateY(20px)' }}>
         Testimonials
       </div>

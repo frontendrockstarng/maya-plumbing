@@ -56,7 +56,7 @@ const Gallery = () => {
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
   return (
-    <section className="gallery-section">
+    <section className="gallery-section" id="gallery">
       <div className="gallery-badge">Ottawa Plumbing Projects</div>
       <h2 className="gallery-heading">Real jobs, real results from homes<br/>across Ottawa.</h2>
       <div className="gallery-grid">
